@@ -1,0 +1,45 @@
+#include <stdio.h>
+  int main()
+  {
+  int arr[10];
+   int i, X, N, M;
+  int f_max(int  b[10], int j);
+  void exchang(int  b[10], int j);
+  printf("\nNumber of arrays : N");
+  scanf("%d",&N);
+   printf("\nInput the elements");
+  for(i=0; i<N ;  i++)
+  {
+  scanf("%d",&arr[i]);
+  }
+  exchang(arr,N);
+  printf("Sorted  array :\n");
+  for(i=0; i< N ;  i++)
+  {
+  printf("%d\n",arr[i]);
+  }
+}
+  int f_max(int b[10], int j)
+  {
+  int max=0,X;
+  for(X = 1; X <=  j; X++)
+  {
+  if ( b[X] >  b[max])
+  {
+  max =  X;
+  }
+  }
+  return(max);
+  }
+  void exchang(int  b[10],int j)
+  {
+  int  M, big, X;
+  for ( X=j-1;  X>=1; X--)
+  {
+  big =  f_max(b,X);
+  M = b[big];
+  b[big] = b[X];
+  b[X] = M;
+  }
+  return ;
+  }
